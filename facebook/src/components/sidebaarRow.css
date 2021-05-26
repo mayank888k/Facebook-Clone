@@ -1,0 +1,13 @@
+.sidebaar__row{
+    display: flex;
+    padding: 10px 20px;
+    align-items: center;
+}
+
+.sidebaar__row:hover{
+    background-color: rgb(230, 228, 228);
+}
+
+.sidebaar__row h5{
+    margin-left: 15px;
+}

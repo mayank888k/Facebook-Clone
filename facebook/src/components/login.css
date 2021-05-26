@@ -1,0 +1,60 @@
+.login{
+  display: flex;
+  flex-direction: column;
+}
+
+.fblogo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2e81f4;
+}
+
+.fblogo img{
+   
+    height: 100px;
+    object-fit: contain;
+    filter:brightness(0) invert(1);
+}
+.login__container img{
+   
+    height: 20px;
+    object-fit: contain;
+   margin-right: 8px;
+}
+.login__details{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+.login__container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 70vh;
+    width: 55vh;
+    box-shadow: 0px 0px 31px -12px rgb(0 0 0 / 75%);
+
+}
+
+.login__details h3{
+    margin-top: 20px;
+    margin-bottom: 20px; 
+}
+.login__details a{
+    color: #2e81f4;
+    margin-top: 10px; 
+    font-weight: bold;
+}
+
+.login__details input{
+    background-color: lightgray;
+    border-radius: 15px;
+    padding: 15px;
+    outline: none;
+    border: none;
+    margin: 10px;
+}

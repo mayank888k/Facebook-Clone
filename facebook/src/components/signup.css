@@ -1,0 +1,47 @@
+.signUp{
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .fblogo{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #2e81f4;
+  }
+  
+  .fblogo img{
+     
+      height: 100px;
+      object-fit: contain;
+      filter:brightness(0) invert(1);
+  }
+  .signUp__details{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      align-items: center;
+      height: 70vh;
+  }
+  
+  
+  .signUp__details h1{
+      margin-bottom: 30px; 
+      font-size: 39px;
+  }
+  .signUp__details a{
+      color: #2e81f4;
+      margin-top: 20px; 
+      font-weight: bold;
+  }
+  
+  .signUp__details input{
+      background-color: lightgray;
+      border-radius: 15px;
+      padding: 15px;
+      outline: none;
+      border: none;
+      margin: 10px;
+  }
+  
