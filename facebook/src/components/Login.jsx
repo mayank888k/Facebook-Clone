@@ -143,7 +143,7 @@ const Login = () => {
             onFailure={onFailure}
             cookiePolicy={"single_host_origin"}
           />
-          ,
+           .
           <NavLink exact to="/signup">
             Sign Up To Facebook
           </NavLink>

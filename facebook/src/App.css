@@ -4,7 +4,7 @@
 
 .app__body{
   background-color: #f1f2f5;
-  min-height: 100vh;
+  min-height: calc(100vh- 10vh);
   display: flex;
 
 }

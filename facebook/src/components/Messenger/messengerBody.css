@@ -1,0 +1,78 @@
+.messenger_chatBody{
+    background-color:white;
+    flex: 1;
+    border-right: 1px solid lightgray;
+    height: 100%;
+    position: relative;
+}
+
+.body__head{
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid lightgray;
+}   
+.chat_name{
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+.chat_name h3{
+    font-weight: 500;
+}
+
+.chathead__icons{
+    width: fit-content;
+    margin-left: auto;
+}
+
+.chat_body{
+    padding: 10px;
+}
+.chat_message{
+    display: flex;
+}
+.chat_messageText{
+    max-width: 20vw;
+    background-color: lightgray;
+    border-radius: 20px;
+    padding: 10px;
+    margin-left: 5px;
+}
+
+.chatAvatarOwn{
+    margin-left: auto;
+}
+
+.chat_messageOwn{
+    background-color: #2e81f4;
+    color: white;
+    margin-left: auto;
+}
+
+.chat__bottum{
+    display: flex;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    padding: 10px;
+}
+.chat__bottumInput{
+    margin: 0px 15px;
+    display: flex;
+    flex: 1;
+}
+
+.chat__bottumInput input{
+    padding: 10px;
+    background-color: rgb(236, 234, 234);
+    border-radius: 20px;
+    outline: none;
+    border: none;
+    flex: 1;
+
+}
+
+.chat__bottomRightIcon{
+    margin-right: 20px;
+}

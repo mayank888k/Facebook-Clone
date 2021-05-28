@@ -133,12 +133,13 @@ const Header = ({ active }) => {
           />
         </div>
       
-      
+      <NavLink exact to='/messenger'>
         <div className="rightIcons">
           <IconButton size="medium">
             <QuestionAnswerIcon htmlColor="gray" />
           </IconButton>
         </div>
+      </NavLink>
       
         <div className="rightIcons">
           <IconButton onClick={logout} size="medium">

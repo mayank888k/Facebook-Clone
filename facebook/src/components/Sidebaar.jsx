@@ -35,7 +35,9 @@ const Sidebaar = () => {
         <NavLink exact to="/friends">
         <SidebaarRow title="Friends" src="" Icon={PeopleIcon} />
         </NavLink>
+        <NavLink exact to='/messenger'>
         <SidebaarRow title="Messanger" src="" Icon={MessageIcon} />
+        </NavLink>
         <SidebaarRow title="Marketplace" src="" Icon={StorefrontIcon} />
         <NavLink exact to="/subscriptions">
         <SidebaarRow title="Videos" src="" Icon={VideoLibraryIcon} />

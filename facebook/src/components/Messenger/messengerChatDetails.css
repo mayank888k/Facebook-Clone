@@ -1,0 +1,16 @@
+.messenger_chatDetails{
+    flex: 0.5;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    align-items: center;
+}
+
+.chatDetail_name{
+    margin-top: 20px;
+}
+
+.chatDetail_name h3{
+    font-size: x-large;
+}
