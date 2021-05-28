@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -18,8 +18,15 @@ const useStyles = makeStyles({
   },
 });
 
+
 export default function MediaCard({img,title,info}) {
   const classes = useStyles();
+  const [like, setLike] = useState(true)
+
+  const handleLike = (e) =>{
+    e.preventDefault()
+    setLike(prevState => !prevState)
+  }
 
   return (
     <Card className={classes.root}>
@@ -39,8 +46,8 @@ export default function MediaCard({img,title,info}) {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="small" color="primary">
-          Like
+        <Button onClick={handleLike} size="small" color="primary">
+          {like ? "Like" : "Liked"}
         </Button>
       </CardActions>
     </Card>
