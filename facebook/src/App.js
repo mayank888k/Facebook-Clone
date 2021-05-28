@@ -3,6 +3,7 @@ import { Route, Switch, useLocation } from 'react-router-dom';
 import './App.css';
 import Account from './components/Account';
 import Feed from './components/Feed';
+import Friends from './components/Friends';
 import Header from './components/Header';
 import Login from './components/Login';
 import Pages from './components/Pages';
@@ -28,6 +29,9 @@ function App() {
     if(location.pathname === '/pages'){
       setActive("pages")
     }
+    if(location.pathname === '/friends'){
+      setActive("friends")
+    }
   },[location])
   return (
 
@@ -42,8 +46,10 @@ function App() {
                 <Feed />
               </Route>
               <Route exact path='/pages'>
-      
                 <Pages />
+              </Route>
+              <Route exact path='/friends'>
+                <Friends />
               </Route>
               <Route exact path='/account'>
                 <Account />

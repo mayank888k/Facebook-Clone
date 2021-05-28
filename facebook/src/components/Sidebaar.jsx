@@ -32,7 +32,9 @@ const Sidebaar = () => {
         <NavLink exact to="/pages">
           <SidebaarRow title="Pages" src="" Icon={PagesIcon} />
         </NavLink>
-        <SidebaarRow title="Freinds" src="" Icon={PeopleIcon} />
+        <NavLink exact to="/friends">
+        <SidebaarRow title="Friends" src="" Icon={PeopleIcon} />
+        </NavLink>
         <SidebaarRow title="Messanger" src="" Icon={MessageIcon} />
         <SidebaarRow title="Marketplace" src="" Icon={StorefrontIcon} />
         <SidebaarRow title="Videos" src="" Icon={VideoLibraryIcon} />
