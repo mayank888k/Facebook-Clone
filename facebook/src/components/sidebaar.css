@@ -1,3 +1,8 @@
 .sideBaar{
     flex:0.33
 }
+
+.sideBaar a{
+    text-decoration: none;
+    color: black;
+}

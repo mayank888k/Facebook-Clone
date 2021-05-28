@@ -13,10 +13,10 @@ import NotificationsActiveIcon from "@material-ui/icons/NotificationsActive";
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import QuestionAnswerIcon from '@material-ui/icons/QuestionAnswer';
 import { useDispatch } from "react-redux";
-import { useHistory } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 import axios from "../axios";
 
-const Header = () => {
+const Header = ({active}) => {
 
   const user =JSON.parse(localStorage.getItem('profile'))
 
@@ -47,7 +47,9 @@ const Header = () => {
   return (
     <div className="header">
       <div className="header__left">
+      <NavLink exact to='/'>
         <img src={logo} alt="" />
+      </NavLink>
         <div className="header__input">
           <SearchIcon htmlColor="gray" />
           <input type="text" placeholder="Search" />
@@ -55,28 +57,25 @@ const Header = () => {
       </div>
 
       <div className="header__center">
-        <div className="header__options header__active">
+        <NavLink exact to='/'>
+        <div className={`header__options ${active == "home" && "header__active"} `}>
           <HomeIcon htmlColor="gray" />
         </div>
-        <div className="header__options">
+        </NavLink>
+        <NavLink exact to='/pages'>
+        <div className={`header__options ${active == "pages" && "header__active"}`}>
           <FlagIcon htmlColor="gray" />
         </div>
+        </NavLink>
         <div className="header__options ">
           <SubscriptionsOutlinedIcon htmlColor="gray" />
-        </div>
-        <div className="header__options">
-          <StorefrontOutlinedIcon htmlColor="gray" />
         </div>
         <div className="header__options">
           <AccountCircleOutlinedIcon htmlColor="gray" />
         </div>
       </div>
       <div className="header__right">
-        <div className="rightIcons">
-          <IconButton size="medium">
-            <AddCircleOutlineOutlinedIcon htmlColor="gray" />
-          </IconButton>
-        </div>
+        
         <div className="rightIcons">
           <IconButton size="medium">
             <NotificationsActiveIcon htmlColor="gray" />
@@ -95,9 +94,11 @@ const Header = () => {
           </Tooltip>
           </IconButton>
         </div>
+        <NavLink exact to ='/account'>
         <IconButton onClick={profile}  size="small">
           <Avatar src={user?.result?.imageUrl} />
         </IconButton>
+        </NavLink>
       </div>
     </div>
   );

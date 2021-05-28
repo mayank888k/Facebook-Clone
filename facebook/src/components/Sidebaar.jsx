@@ -8,25 +8,37 @@ import MessageIcon from '@material-ui/icons/Message';
 import StorefrontIcon from '@material-ui/icons/Storefront';
 import VideoLibraryIcon from '@material-ui/icons/VideoLibrary';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import { NavLink } from 'react-router-dom';
 
 
 const Sidebaar = () => {
 
     const user =JSON.parse(localStorage.getItem('profile'))
     return (
-        <div className="sideBaar">
-            <SidebaarRow title ={user?.result?.name} src={user?.result?.imageUrl}  />
-            <SidebaarRow title ="Covid 19 Information" src="" Icon={LocalHospitalIcon} />
-            <SidebaarRow title ="Pages" src="" Icon={PagesIcon} />
-            <SidebaarRow title ="Freinds" src="" Icon={PeopleIcon} />
-            <SidebaarRow title ="Messanger" src="" Icon={MessageIcon} />
-            <SidebaarRow title ="Marketplace" src="" Icon={StorefrontIcon} />
-            <SidebaarRow title ="Videos" src="" Icon={VideoLibraryIcon} />
-            <SidebaarRow title ="More" src="" Icon={ExpandMoreIcon} />
-            
-
-        </div>
-    )
+      <div className="sideBaar">
+        <NavLink exact to="/account">
+          <SidebaarRow
+            title={user?.result?.name}
+            src={user?.result?.imageUrl}
+          />
+        </NavLink>
+        <a target="_new" href="https://www.mohfw.gov.in/">
+          <SidebaarRow
+            title="Covid 19 Information"
+            src=""
+            Icon={LocalHospitalIcon}
+          />
+        </a>
+        <NavLink exact to="/pages">
+          <SidebaarRow title="Pages" src="" Icon={PagesIcon} />
+        </NavLink>
+        <SidebaarRow title="Freinds" src="" Icon={PeopleIcon} />
+        <SidebaarRow title="Messanger" src="" Icon={MessageIcon} />
+        <SidebaarRow title="Marketplace" src="" Icon={StorefrontIcon} />
+        <SidebaarRow title="Videos" src="" Icon={VideoLibraryIcon} />
+        <SidebaarRow title="More" src="" Icon={ExpandMoreIcon} />
+      </div>
+    );
 }
 
 export default Sidebaar

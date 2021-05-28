@@ -43,7 +43,10 @@
     padding: 10px;
 }
 .header__options{
-    padding: 2px 15px;
+    padding: 5px 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .header__options:hover {
@@ -61,6 +64,7 @@
 }
 
 .header__right{
+    margin-left: 110px;
     display: flex;
     align-items: center;
 }
