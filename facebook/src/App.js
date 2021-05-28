@@ -9,6 +9,7 @@ import Login from './components/Login';
 import Pages from './components/Pages';
 import Sidebaar from './components/Sidebaar';
 import SignUp from './components/SignUp';
+import Subscriptions from './components/Subscriptions';
 import Widget from './components/Widget';
 
 function App() {
@@ -32,6 +33,9 @@ function App() {
     if(location.pathname === '/friends'){
       setActive("friends")
     }
+    if(location.pathname === '/subscriptions'){
+      setActive("subscriptions")
+    }
   },[location])
   return (
 
@@ -50,6 +54,9 @@ function App() {
               </Route>
               <Route exact path='/friends'>
                 <Friends />
+              </Route>
+              <Route exact path='/subscriptions'>
+                <Subscriptions />
               </Route>
               <Route exact path='/account'>
                 <Account />

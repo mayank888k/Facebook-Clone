@@ -8,15 +8,10 @@ import './post.css'
 
 const Post = ({ userImage, userName, timestamp, image, caption }) => {
 
-  const [like, setLike] = useState('')
-  const [count,setCount] = useState(0)
+  const [like, setLike] = useState(false)
 
   const handleLike = () =>{
-    setLike("liked")
-    if(like ==="liked"){
-      setCount(2)
-    }
-    
+    setLike(prevState => !prevState)
   }
 
 
@@ -38,9 +33,9 @@ const Post = ({ userImage, userName, timestamp, image, caption }) => {
         <img src={image} alt="" />
       </div>
       <div className="post__bottum">
-      <div onClick={handleLike} className={`bottum__icon ${like && count===0 && `liked`}`}>
+      <div onClick={handleLike} className={`bottum__icon ${like && `liked`}`}>
           <ThumbUpAltIcon htmlColor="gray" />
-          <h3>Like</h3>
+          <h3>{!like ? "Like" : "Liked"}</h3>
       </div>
       <div  className="bottum__icon">
           <CommentIcon htmlColor="gray" />

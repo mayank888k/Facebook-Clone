@@ -37,7 +37,9 @@ const Sidebaar = () => {
         </NavLink>
         <SidebaarRow title="Messanger" src="" Icon={MessageIcon} />
         <SidebaarRow title="Marketplace" src="" Icon={StorefrontIcon} />
+        <NavLink exact to="/subscriptions">
         <SidebaarRow title="Videos" src="" Icon={VideoLibraryIcon} />
+        </NavLink>
         <SidebaarRow title="More" src="" Icon={ExpandMoreIcon} />
       </div>
     );

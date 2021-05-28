@@ -83,9 +83,11 @@ const Header = ({ active }) => {
           </div>
         </NavLink>
         
-        <div className="header__options ">
+        <NavLink exact to="/subscriptions">
+        <div className={`header__options ${active == "subscriptions" && "header__active"}`}>
           <SubscriptionsOutlinedIcon htmlColor="gray" />
         </div>
+        </NavLink>
         
         <NavLink exact to="/friends">
           <div className={`header__options ${active == "friends" && "header__active"}`}>
