@@ -4,12 +4,12 @@ import React from "react";
 import "./messages.css";
 
 const Messages = ({ message, senderId, timestamp }) => {
-  const userId = JSON.parse(localStorage.getItem("profile"))?.result?._id;
+  const user = JSON.parse(localStorage.getItem("profile"))?.result;
   return (
-    <div className={`chat_message ${userId === senderId && "chat_messageOwn"}`}>
+    <div className={`chat_message ${user?._id === senderId && "chat_messageOwn"}`}>
       <div>
-        <Avatar style={{ height: "20px", width: "20px" }} />
-        <div className={`chat_messageText ${userId === senderId && "chat_messageTextOwn"} `}>
+        <Avatar src={user?.imageUrl} style={{ height: "20px", width: "20px" }} />
+        <div className={`chat_messageText ${user?._id === senderId && "chat_messageTextOwn"} `}>
           <p>{message}</p>
         </div>
       </div>

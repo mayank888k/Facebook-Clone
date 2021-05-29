@@ -12,7 +12,7 @@ router.post('/chats',async (req,res)=>{
 
         const reciever = await User.findOne({name:req.body.name})
         
-
+console.log(reciever)
         const chat = await Chats.create({
             members:[req.body.senderId, String(reciever._id)],
             recieverName: reciever.name

@@ -14,3 +14,16 @@
 .chatDetail_name h3{
     font-size: x-large;
 }
+
+.infoDiv{
+    background-color: rgb(243, 241, 241);
+    width: 100%;
+    padding: 20px;
+    border-radius: 20px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.infoDiv:hover{
+    background-color: rgb(197, 197, 197);
+}

@@ -3,6 +3,7 @@ import React from 'react'
 import "./conversation.css"
 
 const Conversation = ({ConversationId, recieverName}) => {
+  localStorage.setItem('recieverName',recieverName)
     return (
         <div className="chats">
           <div className="chat">

@@ -24,6 +24,7 @@ const MessengerBody = () => {
   const conversationId = useParams()
   console.log(conversationId.conversationId)
   const userId = JSON.parse(localStorage.getItem('profile'))?.result?._id
+  const recieverName = localStorage.getItem('recieverName')
   const [senderMessage, setSenderMessage] = useState("")
   
   const [messages, setMessages] = useState([])
@@ -67,11 +68,10 @@ const MessengerBody = () => {
 console.log(messages)  
   return (
     <div className="messenger_chatBody">
-    <NavLink to="/messenger/asdfasdg">A</NavLink>
       <div className="body__head">
         <Avatar style={{ height: "40px", width: "40px" }} />
         <div className="chat_name">
-          <h3>Name</h3>
+          <h3>{recieverName}</h3>
         </div>
         <div className="chathead__icons">
           <IconButton>
