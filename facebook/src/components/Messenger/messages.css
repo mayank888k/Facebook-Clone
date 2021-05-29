@@ -1,0 +1,27 @@
+.chat_message{
+    display: flex;
+    margin-top: 7px;
+    width: fit-content;
+    flex-direction: column;
+}
+.chat_messageText{
+    max-width: 20vw;
+    background-color: lightgray;
+    border-radius: 20px;
+    padding: 10px;
+    margin-left: 5px;
+}
+
+.chat_messageOwn{
+    margin-left: auto;
+}
+
+.chat_messageTextOwn{
+    background-color: #2e81f4;
+    color: white;
+}
+
+.chat_message h6{
+color: gray;
+margin-left: auto;
+}

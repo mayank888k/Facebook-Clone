@@ -71,7 +71,7 @@ function App() {
                 <Account />
                 <Widget />
               </Route>
-              <Route exact path='/messenger'>
+              <Route path='/messenger/:conversationId'>
                 <Messenger />
               </Route>
           

@@ -1,11 +1,47 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './messengerChats.css'
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import { Avatar, IconButton } from '@material-ui/core';
 import VideoCallIcon from '@material-ui/icons/VideoCall';
 import EditIcon from '@material-ui/icons/Edit';
+import Conversation from './Conversation';
+
+import { NavLink } from 'react-router-dom';
+import axios from '../../axios.js';
 
 const MessengerChats = () => {
+
+  const userId = JSON.parse(localStorage.getItem('profile'))?.result?._id
+
+  const user = JSON.parse(localStorage.getItem('profile'))?.result
+  const [conversation, setConversation] = useState({
+      data:[]
+  })
+
+  const getConversation = async () => {
+        const chats = await axios.get(`/chats/${user?._id}`)
+        setConversation(chats)
+    }
+    useEffect(()=>{
+
+        getConversation()
+    },[])
+
+  const addChat = async () =>{
+      try {
+
+        const freind_name = window.prompt("Enter Name of Your Freind")
+        const chatAdd = await axios.post('/chats',{
+          name:freind_name,
+          senderId: userId
+        })
+      } catch (error) {
+        
+      }
+  }
+
+  
+
     return (
       <div className="messenger_chats">
         <div className="messenger_chatsHead">
@@ -35,6 +71,7 @@ const MessengerChats = () => {
                 padding: "8px",
                 margin: "3px",
               }}
+              onClick={addChat}
             >
               <EditIcon htmlColor="black" />
             </IconButton>
@@ -45,36 +82,16 @@ const MessengerChats = () => {
           <input type="text" placeholder="Search Chats" />
         </div>
 
-        <div className="chats">
-          <div className="chat">
-            <Avatar style={{height:"50px", width:"50px"}} />
-            <div className="chatDetails">
-              <h3>Name</h3>
-              <p>Last Message</p>
-            </div>
-          </div>
-          <div className="chat">
-            <Avatar style={{height:"50px", width:"50px"}} />
-            <div className="chatDetails">
-              <h3>Name</h3>
-              <p>Last Message</p>
-            </div>
-          </div>
-          <div className="chat">
-            <Avatar style={{height:"50px", width:"50px"}} />
-            <div className="chatDetails">
-              <h3>Name</h3>
-              <p>Last Message</p>
-            </div>
-          </div>
-          <div className="chat">
-            <Avatar style={{height:"50px", width:"50px"}} />
-            <div className="chatDetails">
-              <h3>Name</h3>
-              <p>Last Message</p>
-            </div>
-          </div>
-        </div>
+        {conversation?.data?.map((chat) => (
+          
+        <NavLink exact to={`/messenger/${chat._id}`}>
+          <Conversation conversationId={chat._id} recieverName ={chat.recieverName} />
+        </NavLink>    
+          ))}
+        
+          
+          
+    
       </div>
     );
 }

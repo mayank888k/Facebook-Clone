@@ -32,4 +32,22 @@ db.once('open',()=>{
             console.log("Error in triggering Pusher");
         }
     })
+    const messageCollection = db.collection("messages")
+    const changeStreamForMessage = messageCollection.watch()
+
+    changeStreamForMessage.on('change',(change)=>{
+        console.log(change);
+
+        if (change.operationType === "insert") {
+            
+            console.log("Triggering Pusher")
+            pusher.trigger("messages","inserted",{
+                change: change
+            })
+        }
+        else{
+            console.log("Error in triggering Pusher");
+        }
+    })
+
 })

@@ -4,6 +4,7 @@
     border-right: 1px solid lightgray;
     height: 100%;
     position: relative;
+    
 }
 
 .body__head{
@@ -28,27 +29,12 @@
 
 .chat_body{
     padding: 10px;
-}
-.chat_message{
-    display: flex;
-}
-.chat_messageText{
-    max-width: 20vw;
-    background-color: lightgray;
-    border-radius: 20px;
-    padding: 10px;
-    margin-left: 5px;
+    overflow-y: scroll;
+    height: 70%;
+    
 }
 
-.chatAvatarOwn{
-    margin-left: auto;
-}
 
-.chat_messageOwn{
-    background-color: #2e81f4;
-    color: white;
-    margin-left: auto;
-}
 
 .chat__bottum{
     display: flex;
@@ -59,6 +45,11 @@
 }
 .chat__bottumInput{
     margin: 0px 15px;
+    display: flex;
+    flex: 1;
+}
+
+.chat__bottumInput form{
     display: flex;
     flex: 1;
 }

@@ -5,7 +5,7 @@ import GridfsStorage from 'multer-gridfs-storage'
 import connUrl from '../dbConn.js'
 import path from 'path'
 import multer from 'multer'
-import Post from '../postModel.js'
+import Post from '../models/postModel.js'
 
 const router = express.Router()
 

@@ -1,0 +1,23 @@
+.chat{
+    display: flex;
+    padding: 10px;
+    margin: 0 15px;
+    border-radius: 5px;
+    align-items: center;
+}
+
+.chat:hover{
+    background-color: rgb(247, 245, 245);
+}
+
+.chatDetails{
+    margin-left: 15px;
+}
+.chatDetails p{
+    color: lightgray;
+    font-size: small;
+}
+.chatDetails h3{
+    font-weight: 500;
+    font-size: medium;
+}

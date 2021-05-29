@@ -9,11 +9,14 @@ import './dbConn.js'
 import connUrl from './dbConn.js'
 import path from 'path'
 import multer from 'multer'
-import Post from './postModel.js'
+import Post from './models/postModel.js'
 import router from './router/imageRouting.js'
 import './pusher-realtime.js'
 import userRouter from './router/userRouting.js'
+import chatRouter from './router/chatsRouting.js'
+import messageRouter from './router/messageRouting.js'
 import dotenv from 'dotenv'
+
 
 Grid.mongo = mongoose.mongo
 
@@ -28,6 +31,8 @@ app.use(bodyParser.json())
 app.use(cors())
 app.use('/',router)
 app.use('/',userRouter)
+app.use('/',chatRouter)
+app.use('/',messageRouter)
 
 
 //listener
