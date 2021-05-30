@@ -1,6 +1,7 @@
 # Facebook Clone
 
 - Its a Facebook look-alike social media web-app implemented through MERN Stack
+- In this you can post in realtime with images
 - It has a custom user login and registration using NodeJS and MongoDB
 - It also has Google OAuth authentication
 - Realtime Chat Messenger implemented using MERN and Pusher
